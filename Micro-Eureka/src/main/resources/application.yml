@@ -1,0 +1,13 @@
+server:
+  port: 7070
+eureka:
+   instance:
+     hostname: localhost
+   client:
+     register-with-eureka: false #是否到注册中心
+     fetch-registry: false  #表示是否从Eureka Server上获取注册信息，默认为true
+     service-url:
+       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #eureka服务器访问地址
+spring:
+  application:
+     name: micro-eureka  #应用名
