@@ -1,4 +1,4 @@
-package com.in9090.user.consumer.test;
+package com.in9090.user.consumer.test.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,11 @@ import org.springframework.web.client.RestTemplate;
 
 
 @RestController
-public class TestController {
+public class TestRibbonController {
 
     @Autowired
     RestTemplate restTemplate;
-    @RequestMapping("/test/{id}")
+    @RequestMapping("/testRibbon/{id}")
     public Object test(@PathVariable Long id){
         return restTemplate.getForObject("http://micro-user-server/listTest?id="+id,Object.class);
     }
